@@ -11,4 +11,8 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get "/jobs" do
+    erb :jobs
+  end
+
 end
