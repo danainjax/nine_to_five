@@ -14,14 +14,16 @@
 ActiveRecord::Schema.define(version: 20201104144034) do
 
   create_table "jobs", force: :cascade do |t|
-    t.string "title"
-    t.string "location"
-    t.text   "description"
+    t.string  "title"
+    t.string  "company"
+    t.string  "location"
+    t.string  "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.text   "bio"
+    t.string "bio"
     t.string "image_url"
     t.string "email"
     t.string "password_digest"

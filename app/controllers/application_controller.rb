@@ -13,6 +13,9 @@ class ApplicationController < Sinatra::Base
 
   get "/jobs" do
     erb :jobs
+    # Job.all.each do |job|
+    #   job.title
+    # end
   end
 
 end
