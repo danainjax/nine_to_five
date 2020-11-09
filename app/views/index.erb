@@ -1,15 +1,22 @@
-<h1>Put the Job.all data in this view</h1>
-<h2> Code to display all the Jobs on the Job board</h2>
+
 <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
   </head>
 
   <body>
-    <h1>Enter new Job for the Board here:</h1>
+    <h1>Nine_to_Five JOB BOARD:</h1>
 
     <form method="POST" action="/jobs">
       <input type="text" name="string">
       <input type="submit">
+      <ul>
+    <% @jobs.each do |job|%>
+  <li>
+    <a href="/jobs/<%= job.id %>">Title: <%= job.title %></a>
+    Decription: <%= job.description %>
+  </li>
+<% end %>
+</ul>
     </form>
   </body>
 </html>
