@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/jobs/:id' do  #loads show page
+    binding.pry
     @job = Job.find_by_id(params[:id])
     erb :show
   end

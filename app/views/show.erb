@@ -2,7 +2,6 @@ Title: <%= @job.title %>
 Company: <%= @job.company %>
 Description: <%= @job.description %>
 
-<form method="POST" action="/jobs/<%=@job.id%>">
-  <input type="hidden" name="_method" value="DELETE" />
-  <input type="submit" value="delete" />
+
+  <a href="/jobs">See ALL JOBS </a>
 </form>
