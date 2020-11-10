@@ -6,10 +6,9 @@
   <body>
     <h1>Nine_to_Five JOB BOARD:</h1>
 
-    <%# <form method="POST" action="/jobs">
-      <input type="text" name="string">
-      <input type="submit"> %>
+   <img src="https://lh3.googleusercontent.com/proxy/9lD4f1eP8PdhPv1lBRnHC5zUBoyydTL0oeGn5oa2tRCjb6NZbGzqdzaOh8B95SGf-gfhxMTCyDksm1Av5JpsPRzv2pdvD8D4Nb970CgzsqgrRQXCXg"><br>
       <ul>
+      <br>
     <% @jobs.each do |job|%>
   <li>
     <a href="/jobs/<%= job.id %>">Title: <%= job.title %></a>
