@@ -5,51 +5,24 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-  end
-
-  get '/jobs/new' do #loads new form
-    erb :new
+    enable :sessions
+    set :session_secret,""
   end
 
   get "/" do
     erb :welcome
   end
 
-  get "/jobs" do
-    @jobs = Job.all
-    erb :index
-  end
+  # get "/login" #create login form that accepts username and password
 
-  get '/jobs/:id' do  #loads show page
+  post '/login' do # find the user in the database based on their username, if match set the session id to users id and display users data on page
+    @user = User.find_by(:name => params[:username])
     # binding.pry
-    @job = Job.find_by_id(params[:id])
-    erb :show
+    if @user != nil && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      erb :'/users/account'
+    end
   end
 
-  post '/jobs' do  #creates a job
-    @job = Job.create(params)
-    redirect to "/jobs/#{@job.id}"
-  end
-
-  get '/jobs/:id/edit' do #loads edit form
-    @job = Job.find_by_id(params[:id])
-    erb :edit
-  end
-
-
-  patch '/jobs/:id' do  #updates a job
-    @job = Job.find_by_id(params[:id])
-    @job.title = params[:title]
-    @job.company = params[:company]
-    @job.description = params[:description]
-    @job.save
-    redirect to "/jobs/#{@job.id}"
-  end
-
-  delete '/jobs/:id' do #destroy action
-    @job = Job.find_by_id(params[:id])
-    @job.delete
-    redirect to '/jobs'
-  end
 
 end
