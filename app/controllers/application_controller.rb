@@ -37,13 +37,13 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  patch '/jobs/:id' do  #updates a recipe
-    @recipe = Job.find_by_id(params[:id])
-    @recipe.title = params[:title]
-    @recipe.company = params[:company]
-    @recipe.description = params[:description]
-    @recipe.save
-    redirect to "/jobs/#{@recipe.id}"
+  patch '/jobs/:id' do  #updates a job
+    @job = Job.find_by_id(params[:id])
+    @job.title = params[:title]
+    @job.company = params[:company]
+    @job.description = params[:description]
+    @job.save
+    redirect to "/jobs/#{@job.id}"
   end
 
   delete '/jobs/:id' do #destroy action

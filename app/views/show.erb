@@ -8,10 +8,12 @@ Description: <%= @job.description %><br>
   <form method="POST" action="/jobs/<%=@job.id%>">
   <input type="hidden" name="_method" value="DELETE" />
   <input type="submit" value="delete" />
+  </form>
 
-<form method="POST" action="/jobs/<%=@job.id%>">
+<form method="PATCH" action="/jobs/<%=@job.id%>">
   <input type="hidden" name="_method" value="EDIT" />
   <input type="submit" value="edit" />
+</form>
 
   <a href="/jobs">See ALL JOBS </a>
 
