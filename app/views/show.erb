@@ -5,15 +5,16 @@ Description: <%= @job.description %>
 
  </form> <br>
 
-  <br><form method="POST" action="/jobs/<%=@job.id%>">
+  <p><form method="POST" action="/jobs/<%=@job.id%>">
   <input type="hidden" name="_method" value="DELETE" />
   <input type="submit" value="delete" />
-  </form><br>
+  </form></p>
 
-<br><form method="GET" action="/jobs/<%=@job.id%>/edit">
+<p><form method="GET" action="/jobs/<%=@job.id%>/edit">
   <input type="hidden" name="edit" value="EDIT" />
   <input type="submit" value="edit" />
-</form><br>
+</form></p>
 
+    
   <a href="/jobs">See ALL JOBS </a>
 
