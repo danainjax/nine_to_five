@@ -1,19 +1,19 @@
 Title: <%= @job.title %>
 Company: <%= @job.company %>
-Description: <%= @job.description %><br>
+Description: <%= @job.description %>
 
 
- </form> 
+ </form> <br>
 
-  <form method="POST" action="/jobs/<%=@job.id%>">
+  <br><form method="POST" action="/jobs/<%=@job.id%>">
   <input type="hidden" name="_method" value="DELETE" />
   <input type="submit" value="delete" />
-  </form>
+  </form><br>
 
-<form method="PATCH" action="/jobs/<%=@job.id%>">
-  <input type="hidden" name="_method" value="EDIT" />
+<br><form method="GET" action="/jobs/<%=@job.id%>/edit">
+  <input type="hidden" name="edit" value="EDIT" />
   <input type="submit" value="edit" />
-</form>
+</form><br>
 
   <a href="/jobs">See ALL JOBS </a>
 
