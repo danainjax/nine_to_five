@@ -36,6 +36,15 @@ class SessionsController < ApplicationController
                 erb :'users/login'
             end  
         end
+    
+ #users can logout
+    get '/logout' do
+        session.clear
+        redirect '/'
+    end
 end
-    # #users can logout
+
+        
+
+    
 
