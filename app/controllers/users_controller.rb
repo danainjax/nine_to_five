@@ -8,15 +8,15 @@ class UsersController < ApplicationController
         end    
 
         post '/signup' do
-           @user = User.new(params)
-           if !@user.name.empty? && !@user.password.empty?
-            if User.find_by(:name => @user.name)
-            redirect '/'
+           user = User.new(params)
+        #    binding.pry
+            if user.username.empty? || user.password.empty?
+                @error = "Username and password cannot be blank"
+                erb :'users/signup'
+            else
+                user.save
+                session[:user_id] = user.id
+                redirect '/jobs'
             end
-            @user.save
-            redirect '/jobs'
-           else
-            erb :'users/signup'
-           end
         end
 end
