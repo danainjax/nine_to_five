@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+    #users can sign up
+    #users can delete account
+
         get '/signup' do
             erb :'users/signup'
         end    
