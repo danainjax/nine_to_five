@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     #         @error = "Username and password cannot be blank"
     #         erb :'users/login'
     #     else
-    #         if user = User.find(username: params["username"], password: params["password"])
+    #         if user = User.find_by(username: params["username"], password: params["password"])
     #             session[:user_id] = user.id
     #             redirect '/jobs'
     #         else

@@ -1,19 +1,31 @@
 class JobsController < ApplicationController
 
     get '/jobs/new' do #loads new form
-        erb :new
+        if logged_in?
+            erb :new
+        else 
+            erb :'users/login'
+        end
       end
     
     
       get "/jobs" do
         @jobs = Job.all
-        erb :index
+        if logged_in?
+            erb :index
+        else
+            erb :'users/login'
+        end
       end
     
       get '/jobs/:id' do  #loads show page
+        if logged_in?
         # binding.pry
-        @job = Job.find_by_id(params[:id])
-        erb :show
+            @job = Job.find_by_id(params[:id])
+            erb :show
+        else
+            erb :'users/login'
+        end
       end
     
       post '/jobs' do  #creates a job
@@ -42,4 +54,4 @@ class JobsController < ApplicationController
         redirect to '/jobs'
       end
     
-    end
+end
