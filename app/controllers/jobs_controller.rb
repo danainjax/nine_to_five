@@ -29,13 +29,20 @@ class JobsController < ApplicationController
       end
     
       post '/jobs' do  #creates a job
-        @job = Job.create(params)
-        redirect to "/jobs/#{@job.id}"
+        # @job = Job.create(params)
+        # redirect to "/jobs/#{@job.id}"
+        job = current_user.jobs.build(params)
+        job.save
+        redirect to "/jobs/#{job.id}"
       end
     
       get '/jobs/:id/edit' do #loads edit form
-        @job = Job.find_by_id(params[:id])
-        erb :edit
+        if logged_in?
+            @job = Job.find_by_id(params[:id])
+            erb :edit
+        else
+            erb "/users/login"
+        end
       end
     
     
@@ -49,9 +56,13 @@ class JobsController < ApplicationController
       end
     
       delete '/jobs/:id' do #destroy action
-        @job = Job.find_by_id(params[:id])
-        @job.delete
-        redirect to '/jobs'
+        if logged_in?
+            @job = Job.find_by_id(params[:id])
+            @job.delete
+            redirect to '/jobs'
+        else
+            erb :'/users/login'
+        end
       end
     
 end
