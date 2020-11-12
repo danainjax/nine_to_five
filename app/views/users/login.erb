@@ -1,0 +1,21 @@
+<h1>Nine_to_Five</h1>
+<h2>Job Board</h2>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+    <h1>Welcome to Nine_to_Five</h1>
+    <h3>Log In Please</h3>
+    <p><%= @error %>
+      <form method="post" action="/login">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="password">
+      <input type="submit">
+    </form><br>
+    <img src="https://pics.filmaffinity.com/Nine_to_Five_9_To_5-364749326-large.jpg" style="width:500px;height500px;">
+  </body>
+</html>
+
+
