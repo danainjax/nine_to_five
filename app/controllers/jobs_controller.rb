@@ -1,7 +1,10 @@
 class JobsController < ApplicationController
 
-    get '/jobs/new' do #loads new form
+    before do
         require_login
+    end
+
+    get '/jobs/new' do #loads new form
         erb :new
     end
     
@@ -13,7 +16,6 @@ class JobsController < ApplicationController
     end
     
     get '/jobs/:id' do  #loads show page
-        require_login
         # binding.pry
         @job = Job.find_by_id(params[:id])
         erb :show
@@ -30,7 +32,6 @@ class JobsController < ApplicationController
     end
     
     get '/jobs/:id/edit' do #loads edit form
-        require_login
             @job = Job.find_by_id(params[:id])
             erb :edit
     end
@@ -47,7 +48,6 @@ class JobsController < ApplicationController
     end
     
     delete '/jobs/:id' do #destroy action
-        require_login
             @job = Job.find_by_id(params[:id])
             @job.delete
             redirect to '/jobs'
