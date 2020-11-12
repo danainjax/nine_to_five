@@ -1,7 +1,9 @@
 
 <p><%= @error %></p>
-<form action="/signup" method="post">
-    <input type="text" name="username">
-    <input type="password" name="password">
+<body>
+<form method="post" action="/signup">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
     <input type="submit" value="Sign Up">
 </form>
+</body>
