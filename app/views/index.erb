@@ -11,13 +11,14 @@
       <br>
     <% @jobs.each do |job|%>
   <li>
-    <a href="/jobs/<%= job.id %>">Title: <%= job.title %></a>
+    <a href="/jobs/<%= job.id %>"><%= job.title %></a>
+    Company: <%= job.company %>
     Decription: <%= job.description %>
+    Key Qualifications: <%= job.key_qualifications %>
+
   </li>
 <% end %>
 </ul>
     </form>
-
-    <a href="/jobs/new">Create a New Job</a>
   </body>
 </html>

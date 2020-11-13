@@ -4,7 +4,8 @@ class CreateJobs < ActiveRecord::Migration
       t.string :title
       t.string :company
       t.string :location
-      t.string :description
+      t.text :description
+      t.text :key_qualifications
       t.integer :user_id
       # t.string :logo_url
     end 
