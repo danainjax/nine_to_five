@@ -45,7 +45,9 @@ class JobsController < ApplicationController
         @job = Job.find_by_id(params[:id])
         @job.title = params[:title]
         @job.company = params[:company]
+        @job.location = params[:location]
         @job.description = params[:description]
+        @job.key_qualifications = params[:key_qualifications]
         @job.save
         redirect to "/jobs/#{@job.id}"
     end

@@ -1,6 +1,13 @@
-Title: <%= @job.title %>
-Company: <%= @job.company %>
-Description: <%= @job.description %>
+<h2><%= @job.title %></h2>
+Company: <%= @job.company %><br>
+<br>
+<%# <a href= @job.image_url_logo> %>
+Location: <%= @job.location %><br>
+<br>
+Description: <%= @job.description %><br>
+<br>
+Key Qualifications: <%= @job.key_qualifications %><br>
+<br>
 
 
  </form> <br>
@@ -18,5 +25,5 @@ Description: <%= @job.description %>
 <% end %>
 
     
-  <a href="/jobs">See ALL JOBS </a>
+  
 
