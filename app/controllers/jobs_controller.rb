@@ -27,10 +27,14 @@ class JobsController < ApplicationController
     
     post '/jobs' do  #creates a job
         # @job = Job.create(params)
-        # redirect to "/jobs/#{@job.id}"
         job = current_user.jobs.build(params)
-        job.save
-        redirect to "/jobs/#{job.id}"
+            if params[:title] == "" || params[:company] == ""
+                @error = "*Title and Company fields cannot be blank"
+                erb :new
+            else
+            job.save
+            redirect to "/jobs/#{job.id}"
+        end
     end
     
     get '/jobs/:id/edit' do #loads edit form
