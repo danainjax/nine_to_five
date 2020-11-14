@@ -1,2 +1,15 @@
-<h1> Welcome to Your Jobs Page </h1>
-<h2>Display All the User's Jobs here</h2>
+<h1> Welcome <%= @user.username%></h1>
+<h2>Jobs you've posted:</h2>
+<h2><% @user.jobs.each do |job|%></h2>
+Company: <% job.company %><br>
+<br>
+<%# <a href= @job.image_url_logo> %>
+Location: <%= job.location %><br>
+<br>
+Description: <%= job.description %><br>
+<br>
+Key Qualifications: <%= job.key_qualifications %><br>
+<br>
+<% end %>
+
+
