@@ -12,6 +12,7 @@ Key Qualifications: <%= @job.key_qualifications %><br>
 
 
  </form> <br>
+ <%# check this validation %>
 <% if @job.user && session[:user_id] = @job.user.id %>
 
   <p><form method="POST" action="/jobs/<%=@job.id%>">
