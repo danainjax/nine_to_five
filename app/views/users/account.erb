@@ -1,15 +1,18 @@
 <h1> Welcome <%= @user.username%></h1>
 <h2>Jobs you've posted:</h2>
 <h2><% @user.jobs.each do |job|%></h2>
-Company: <% job.company %><br>
-<br>
-<%# <a href= @job.image_url_logo> %>
-Location: <%= job.location %><br>
-<br>
-Description: <%= job.description %><br>
-<br>
-Key Qualifications: <%= job.key_qualifications %><br>
-<br>
-<% end %>
+<li>
+   <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+    Company: <%= job.company %><br>
+    <br>Location: <%= job.location %><br>
+    <br>Description: <%= job.description %><br>
+    <br>
+
+  </li>
+  <% end %>
+
+
+
+  
 
 
