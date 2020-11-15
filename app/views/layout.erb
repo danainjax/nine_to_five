@@ -15,9 +15,14 @@
   </head>
   <body>
     <div class="wrapper">
-    <div><a href="/jobs">See All Jobs</a></div><br>
-    <div><a href="/jobs/new">Create a New Job</a></div><br>
-    <div><a href="/logout">Logout</a></div><br>
+      <% if logged_in? %>
+      <div class="topnav">
+          <a href="/jobs">See All Jobs</a>
+          <a href="/jobs/new">Create a New Job</a>
+          <a href="/logout">Logout</a></div>
+      <% else %>
+      <% nil %>
+      <%end%>
     <br>
         <%= yield %>
 
