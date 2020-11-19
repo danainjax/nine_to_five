@@ -6,7 +6,7 @@ This is a basic job board application.
 
 Capable of creating jobs, reading, updating, and deleting them.
 
-This useful crud app was inspired by a Flatiorn cohort-mate, *Yani Ansari*. Often, she will post open jobs on a Slack channel to alert students of new positions. This led to the idea to structure this application around a locally curated job board relevant to a school, community group, place of worship, or club.
+This useful crud app was inspired by a Flatiron cohort-mate, *Yani Ansari*. Often, she will post open jobs on a Slack channel to alert students of new positions. This led to the idea to structure this application around a locally curated job board relevant to a school, community group, place of worship, or club.
 
 
 ## Installation
