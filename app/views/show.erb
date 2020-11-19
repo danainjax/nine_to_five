@@ -1,14 +1,18 @@
+  <% if @job !=nil %>
+      <h2><%= @job.title %></h2>
+      Company: <%= @job.company %><br>
+      <br>
+      <%# <a href= @job.image_url_logo> %>
+      Location: <%= @job.location %><br>
+      <br>
+      Description: <%= @job.description %><br>
+      <br>
+      Key Qualifications: <%= @job.key_qualifications %><br>
+      <br>
 
-<h2><%= @job.title %></h2>
-Company: <%= @job.company %><br>
-<br>
-<%# <a href= @job.image_url_logo> %>
-Location: <%= @job.location %><br>
-<br>
-Description: <%= @job.description %><br>
-<br>
-Key Qualifications: <%= @job.key_qualifications %><br>
-<br>
+  <% else %>
+    <% redirect to '/jobs' %>
+  <% end %>
 
 
  </form> <br>
