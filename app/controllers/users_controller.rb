@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+    get '/account' do
+        @user = Helper.user(session)
+        erb  :'/users/account'
+    end
+
     #users can sign up
     #users can delete account
 
