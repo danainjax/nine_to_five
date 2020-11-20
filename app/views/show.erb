@@ -15,22 +15,21 @@
   <% end %>
 
 
- </form> <br>
+ 
  <%# check this validation %>
 <% if @job.user && session[:user_id] = @job.user.id %>
+    </form> <br>
+    <p><form method="POST" action="/jobs/<%=@job.id%>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="   delete   ">
+    </form></p>
 
-<p><form method="GET" action="/jobs/<%=@job.id%>/edit">
-  <input type="hidden" name="edit" value="EDIT" />
-  <input type="submit" value="     edit     " /></p>
-
-  <p><form method="POST" action="/jobs/<%=@job.id%>">
-  <input type="hidden" name="_method" value="DELETE" />
-  <input type="submit" value="   delete   " />
-  </form></p>
+    <p><form method="GET" action="/jobs/<%=@job.id%>/edit">
+    <input type="hidden" name="edit" value="EDIT">
+    <input type="submit" value="     edit     "></p>
 
 
- 
-</form></p>
+    </form></p>
 
 
 <% end %>
