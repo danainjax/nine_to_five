@@ -14,12 +14,15 @@
 ActiveRecord::Schema.define(version: 20201104144034) do
 
   create_table "jobs", force: :cascade do |t|
-    t.string  "title"
-    t.string  "company"
-    t.string  "location"
-    t.text    "description"
-    t.text    "key_qualifications"
-    t.integer "user_id"
+    t.string   "title"
+    t.string   "company"
+    t.string   "image_url_logo"
+    t.string   "location"
+    t.text     "description"
+    t.text     "key_qualifications"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

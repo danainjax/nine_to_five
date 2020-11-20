@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'bigdecimal', '1.3.5'
+gem 'time'
 
 group :test do
   gem 'rspec'

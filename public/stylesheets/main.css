@@ -81,6 +81,24 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    background-color:#dddddd;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -112,4 +130,5 @@
     font-size: 18px;
     line-height: 24px;
   }
+  
 }

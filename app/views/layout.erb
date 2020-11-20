@@ -17,11 +17,13 @@
     <div class="wrapper">
     
       <% if logged_in? %>
-      <div class="topnav">
-          <a href="/account">My Account</a><br>
-              <a href="/jobs">See All Jobs</a><br>     
-          <a href="/jobs/new">Create a New Job</a> <br>   
-          <a href="/logout">Logout</a></div><br>
+     
+      <ul>
+        <li><a href="/account">My Account</a></li>
+        <li><a href="/jobs">See All Jobs</a></li>    
+        <li><a href="/jobs/new">Create a New Job</a></li>    
+        <li><a href="/logout">Logout</a></li>
+      </ul>
       <% else %>
       <% nil %>
       <%end%>
