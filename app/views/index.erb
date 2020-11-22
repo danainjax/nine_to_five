@@ -10,15 +10,19 @@
       <ul>
       <br>
     <% @jobs.each do |job|%>
-  <li>
+  <div class="card">
+  <%# <li> %>
+    <div class="container">
    <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
     Company: <%= job.company %> 
     Location: <%= job.location %><br>
     Description: <%= job.description %><br>
     <%= job.time %><br>
     <br>
-
-  </li>
+    </div>
+  <%# </li> %>
+  </div>
+  <br>
 <% end %>
 </ul>
     </form>
