@@ -1,5 +1,7 @@
   <% if @job !=nil %>
+  <div class="card">
       <h2><%= @job.title %></h2>
+    <div class="container">
       Company: <%= @job.company %><br>
       <br>
       <%# <a href= @job.image_url_logo> %>
@@ -10,6 +12,8 @@
       Key Qualifications: <%= @job.key_qualifications %><br>
       <%= @job.time %>
       <br>
+    </div>
+  </div>
 
   <% else %>
     <% redirect to '/jobs' %>
