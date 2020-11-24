@@ -13,10 +13,14 @@
       Description: <%= @job.description %><br>
       <br>
       Key Qualifications: <%= @job.key_qualifications %><br>
+      <br>
       <%= @job.time %>
+      <br>
       <br>
     </div>
   </div>
+  <br>
+  
 
   <% else %>
     <% redirect to '/jobs' %>

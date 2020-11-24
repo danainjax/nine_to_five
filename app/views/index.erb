@@ -12,7 +12,7 @@
       <br>
     <% @jobs.each do |job|%>
   <div class="card">
-  <%# <li> %>
+  
     <div class="container">
    <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h2>
     <h1><%= job.company %></h1>
@@ -22,11 +22,11 @@
     <%= job.time %><br>
     <br>
     </div>
-  <%# </li> %>
+  
   </div>
   <br>
 <% end %>
-</ul>
+
     </form>
   </body>
 </html>

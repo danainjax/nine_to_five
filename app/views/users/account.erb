@@ -2,14 +2,24 @@
 <img src="images/desk.jpeg"><br>
 <h3>Click a job title to edit or delete</h3>
 <h2><% @user.jobs.each do |job|%></h2>
-<li>
-   <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
-    Company: <%= job.company %><br>
+
+  <div class="card">
+  
+  <div class="container">
+   <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+    <h1><%= job.company %></h1><br>
     <br>Location: <%= job.location %><br>
     <br>Description: <%= job.description %><br>
     <br>
+    <br>Key Qualifications: <%=job.key_qualifications %><br>
+    <br>
+    <%= job.time %>
+    <br>
 
-  </li>
+  </div>
+  </div>
+  <br>
+
   <% end %>
 
 
