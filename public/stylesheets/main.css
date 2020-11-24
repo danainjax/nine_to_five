@@ -16,9 +16,15 @@
     background-color: #851400;
     color: #851400;
     background-image: url(http://www.transparenttextures.com/patterns/wood-pattern.png);
-    font-family: Sans-Serif;
-    line-height: 18px;
+    font-family: American Typewriter, serif;
+    line-height: 16px;
   }
+
+  textarea  
+{  
+   font-family: American Typewriter, serif;  
+   font-size: 16px;   
+}
 
   .wrapper {
     background: #fff;
@@ -104,6 +110,7 @@
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-family: Sans-Serif;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
