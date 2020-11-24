@@ -1,23 +1,30 @@
+<iframe src="https://giphy.com/embed/ApoNQTfFtXz1u" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></a></p>
+
 <form method="POST" action="/jobs/<%=@job.id%>">
   <input id="hidden" type="hidden" name="_method" value="patch" />
 
   <label for="title">Title</label>
+  <br>
   <input type="text" id="title" name="title" value="<%=@job.title%>" /><br>
   <br>
 
   <label for="company">Company</label>
+  <br>
   <input type="text" id="company" name="company" value="<%=@job.company%>" /><br>
   <br>
 
   <label for="location">Location</label>
+  <br>
   <input type="text" id="location" name="location" value="<%=@job.location%>" /><br>
   <br>
 
   <label for="description">Description</label>
+  <br>
   <input type="text" id="description" name="description" value="<%=@job.description%>" /><br>
   <br>
 
 <label for="key_qualifications">Key Qualifications</label>
+<br>
   <input type="text" id="key_qualifications" name="key_qualifications" value="<%=@job.key_qualifications%>" /><br>
   <br>
   <input type="submit" value="    submit    " >
