@@ -22,11 +22,8 @@ class JobsController < ApplicationController
         @job = Job.find_by_id(params[:id])
         erb :show
     end
-        
-      
     
     post '/jobs' do  #creates a job
-        # @job = Job.create(params)
         job = current_user.jobs.build(params)
             if params[:title] == "" || params[:company] == ""
                 @error = "*Title and Company fields cannot be blank"
