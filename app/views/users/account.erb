@@ -1,6 +1,6 @@
 <h1> Welcome <%= @user.username%></h1>
 <img src="images/desk.jpeg"><br>
-<h2>Jobs you've posted:</h2>
+<h3>Click a job title to edit or delete</h3>
 <h2><% @user.jobs.each do |job|%></h2>
 <li>
    <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>

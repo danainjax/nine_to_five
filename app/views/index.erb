@@ -13,10 +13,11 @@
   <div class="card">
   <%# <li> %>
     <div class="container">
-   <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
-    Company: <%= job.company %> 
-    Location: <%= job.location %><br>
+   <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h2>
+    <h1><%= job.company %></h1>
+    <p>Location: <%= job.location %></p>
     Description: <%= job.description %><br>
+    <br>
     <%= job.time %><br>
     <br>
     </div>
