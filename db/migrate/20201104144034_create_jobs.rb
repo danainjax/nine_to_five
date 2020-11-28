@@ -3,13 +3,12 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string :title
       t.string :company
-      t.string :image_url_logo
       t.string :location
       t.text :description
       t.text :key_qualifications
+      t.string :application_url
       t.timestamps 
       t.integer :user_id
-      # t.string :logo_url
     end 
   end
 end

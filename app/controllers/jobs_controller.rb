@@ -11,7 +11,7 @@ class JobsController < ApplicationController
     
     
     get "/jobs" do
-        @jobs = Job.all
+        @jobs = Job.all.reverse
         require_login
         erb :index
     end

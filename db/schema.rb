@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20201104144034) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "company"
-    t.string   "image_url_logo"
     t.string   "location"
     t.text     "description"
     t.text     "key_qualifications"
+    t.string   "application_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
