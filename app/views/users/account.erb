@@ -8,13 +8,13 @@
   <div class="container">
    <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
     <h1><%= job.company %></h1><br>
-    <br>Location: <%= job.location %><br>
-    <br>Description: <%= job.description %><br>
+    <br><h4>Location:</h4> <%= job.location %><br>
+    <br><h4>Description:</h4> <%= job.description %><br>
     <br>
-    <br>Key Qualifications: <%=job.key_qualifications %><br>
+    <br><h4>Key Qualifications:</h4> <%=job.key_qualifications %><br>
     <br>
     <a href=<%="#{job.application_url}"%>>
-    <br>How to Apply: <%=job.application_url %><br>
+    <br><h4>Apply: <%=job.application_url %></h4><br>
     <br>
     <%= job.time %>
     <br>
