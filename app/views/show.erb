@@ -7,14 +7,16 @@
     
       
       <br>
-      <%# <a href= @job.image_url_logo> %>
-      Location: <%= @job.location %><br>
+      <h4>Location: <%= @job.location %></h4><br>
       <br>
-      Description: <%= @job.description %><br>
+      <h4>Description:</h4><%= @job.description %><br>
       <br>
-      Key Qualifications: <%= @job.key_qualifications %><br>
+      <h4>Key Qualifications:</h4>
+      <%= @job.key_qualifications %><br>
       <br>
-      Apply: <%= @job.application_url %><br>
+      <a href=<%="#{@job.application_url}"%>>
+      <h4>Apply: <%= @job.application_url %></h4>
+      
       <br>
       <%= @job.time %>
       <br>
