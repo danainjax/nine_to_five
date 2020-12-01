@@ -14,9 +14,11 @@
       <h4>Key Qualifications:</h4>
       <%= @job.key_qualifications %><br>
       <br>
-      <a href=<%="#{@job.application_url}"%>>
-      <h4>Apply: <%= @job.application_url %></h4>
       
+      <h4>Apply: <a href="<%=@job.application_url%>"><%= @job.application_url %></a></h4>
+      
+      
+
       <br>
       <%= @job.time %>
       <br>

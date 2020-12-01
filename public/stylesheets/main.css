@@ -157,6 +157,14 @@
     box-shadow: 0 8px 16px 0 rgba(226, 123, 123, 0.2);
   }
   
+  a {
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+  }
+
   img {
     border-radius: 5px 5px 0 0;
   }
