@@ -5,10 +5,10 @@
 
   <body>
     <center><h1>Nine_to_Five JOB BOARD:</h1></center>
-   <center><iframe src="https://gifer.com/embed/76NL" width=500 height=228.480 frameBorder="0" allowFullScreen></iframe><p></a></center></p>
+   <center><iframe src="https://gifer.com/embed/76NL" width=500 height=228.480 frameBorder="0" allowFullScreen></iframe></a></center>
       <ul>
       <br>
-      <<center><h3>Click a job title to see details</h3></center>
+      <center><p><h3>Click a job title to see details</h3></p></center>
     <% @jobs.each do |job|%>
   <div class="card">
   
@@ -16,7 +16,9 @@
    <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h2>
     <h1><%= job.company %></h1>
     <p><h4>Location: <%= job.location %></h4></p>
+    <% if job.description != nil %>
     <h4>Description:</h4> <%= job.description %><br>
+    <% end %>
     <br>
     <%= job.time %><br>
     <br>

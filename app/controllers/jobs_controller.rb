@@ -1,8 +1,9 @@
 class JobsController < ApplicationController
 
-    # before do
-    #     require_login
-    # end
+    before do
+        binding.pry
+        current_user
+    end
 
     get '/jobs/new' do #loads new form
         require_login
@@ -11,7 +12,7 @@ class JobsController < ApplicationController
     
     
     get "/jobs" do
-        @jobs = Job.all.reverse
+        @jobs = Job.all.reverse #sorts jobs by last created
         require_login
         erb :index
     end
@@ -49,6 +50,7 @@ class JobsController < ApplicationController
         @job.location = params[:location]
         @job.description = params[:description]
         @job.key_qualifications = params[:key_qualifications]
+        @job.application_url = params[:application_url]
         @job.save
         redirect to "/jobs/#{@job.id}"
     end

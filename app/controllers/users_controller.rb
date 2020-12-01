@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
 
-    get '/account' do
-        @user = Helper.user(session)
-        erb  :'/users/account'
-    end
+    # get '/account' do
+    #     # binding.pry
+    #     # @user = User.find(session[:user_id])
+    #     # @user(session)
+    #     erb  :'/users/account'
+    # end
 
     #users can sign up
     #users can delete account
-
     get '/signup' do
         erb :'/users/signup'
-    end    
+    end 
 
     post '/signup' do
         user = User.new(params)
@@ -27,4 +28,6 @@ class UsersController < ApplicationController
                 redirect '/jobs'
             end
     end
+
+    
 end

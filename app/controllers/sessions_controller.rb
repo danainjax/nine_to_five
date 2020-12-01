@@ -13,16 +13,24 @@ class SessionsController < ApplicationController
                 erb :'users/login'
         # binding.pry
             elsif @user != nil && @user.authenticate(params[:password])
+                @user.save
                 session[:user_id] = @user.id
-                erb :'/users/account'
+                erb :'users/account'
 
             else
                 @error = "Account not found"
                 erb :'users/login'
-            end  
-        end
+            end 
+        end 
+
+    # users can view their account page
+    get '/account' do 
+        binding.pry
+         @user = User.find(session[:user_id])
+         erb :'users/account'
+    end
     
- #users can logout
+    #users can logout
     get '/logout' do
         session.clear
         erb  :'logout'
