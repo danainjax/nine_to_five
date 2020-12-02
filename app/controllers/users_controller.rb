@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
 
-    # get '/account' do
-    #     # binding.pry
-    #     # @user = User.find(session[:user_id])
-    #     # @user(session)
-    #     erb  :'/users/account'
-    # end
-
     #users can sign up
     #users can delete account
     get '/signup' do

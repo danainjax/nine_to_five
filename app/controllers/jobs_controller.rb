@@ -25,12 +25,12 @@ class JobsController < ApplicationController
     
     post '/jobs' do  #creates a job
         job = current_user.jobs.build(params)
-            if params[:title] == "" || params[:company] == ""
+            # if params[:title] == "" || params[:company] == ""
+              if job.save  
+                redirect to "/jobs/#{job.id}"
+              else
                 @error = "*Title and Company fields cannot be blank"
-                erb :new
-            else
-            job.save
-            redirect to "/jobs/#{job.id}"
+                erb :new  
         end
     end
     
@@ -42,15 +42,18 @@ class JobsController < ApplicationController
     
     
     
-    patch '/jobs/:id' do  #updates a job
+    patch '/jobs/:id' do 
+         #updates a job
         @job = Job.find_by_id(params[:id])
-        @job.title = params[:title]
-        @job.company = params[:company]
-        @job.location = params[:location]
-        @job.description = params[:description]
-        @job.key_qualifications = params[:key_qualifications]
-        @job.application_url = params[:application_url]
-        @job.save
+        params.delete(:_method)
+        @job.update(params)
+        # @job.title = params[:title]
+        # @job.company = params[:company]
+        # @job.location = params[:location]
+        # @job.description = params[:description]
+        # @job.key_qualifications = params[:key_qualifications]
+        # @job.application_url = params[:application_url]
+        # @job.save
         redirect to "/jobs/#{@job.id}"
     end
     
