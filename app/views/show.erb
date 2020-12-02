@@ -37,7 +37,7 @@
 
  
  <%# check this validation %>
-<% if @job.user && session[:user_id] = @job.user.id %>
+<% if @job.user && session[:user_id] == @job.user.id %>
     
     <p><form method="GET" action="/jobs/<%=@job.id%>/edit">
     <input type="hidden" name="edit" value="EDIT">

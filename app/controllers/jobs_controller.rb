@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
 
     before do
-        binding.pry
         current_user
     end
 

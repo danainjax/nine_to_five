@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
 
     # users can view their account page
     get '/account' do 
-        binding.pry
          @user = User.find(session[:user_id])
          erb :'users/account'
     end
